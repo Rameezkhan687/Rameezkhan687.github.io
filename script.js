@@ -1,25 +1,5 @@
 var map = L.map('map').setView([20, 0], 2); // This centers the map around lat 20, long 0 with a zoom level of 2.
 var markers = {};
-var timelineEvents = document.querySelectorAll('.timeline-event');
-
-timelineEvents.forEach(function(event) {
-    event.addEventListener('click', function(e) {
-        var eventId = e.currentTarget.getAttribute('data-id');
-        var marker = markers[eventId];
-        map.panTo(marker.getLatLng());
-    });
-});
-for (var id in markers) {
-    markers[id].on('click', function(e) {
-        var eventId = getKeyByValue(markers, e.target);
-        var eventElement = document.querySelector('.timeline-event[data-id="' + eventId + '"]');
-        eventElement.scrollIntoView({behavior: "smooth"});
-    });
-}
-
-function getKeyByValue(object, value) {
-    return Object.keys(object).find(key => object[key] === value);
-}
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data © OpenStreetMap contributors',
 }).addTo(map);
@@ -46,3 +26,24 @@ markers["event5"] =L.marker([28.4744, 77.5040]).addTo(map)
 // PhD in Biomedicine
 markers["event6"] =L.marker([41.3874, 2.1686]).addTo(map)
 .bindPopup('<h3>PhD in Biomedicine</h3><p>University of Barcelona, 2022-2026</p>');
+
+var timelineEvents = document.querySelectorAll('.timeline-event');
+
+timelineEvents.forEach(function(event) {
+    event.addEventListener('click', function(e) {
+        var eventId = e.currentTarget.getAttribute('data-id');
+        var marker = markers[eventId];
+        map.panTo(marker.getLatLng());
+    });
+});
+for (var id in markers) {
+    markers[id].on('click', function(e) {
+        var eventId = getKeyByValue(markers, e.target);
+        var eventElement = document.querySelector('.timeline-event[data-id="' + eventId + '"]');
+        eventElement.scrollIntoView({behavior: "smooth"});
+    });
+}
+
+function getKeyByValue(object, value) {
+    return Object.keys(object).find(key => object[key] === value);
+}
