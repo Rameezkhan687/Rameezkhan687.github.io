@@ -202,5 +202,29 @@ h1 {
     transform: scale(1.5); /* Enlarges the letter on hover */
 }
 
+.timeline-event .event-content {
+    min-width: 200px; /* Minimum width */
+    max-width: 600px; /* Maximum width, ensures that content on large screens doesn't stretch too far */
+    padding: 10px;
+    margin: 10px; /* Spacing between boxes */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* Allows the box to grow with content */
+    vertical-align: top; /* Keeps content aligned nicely */
+}
+
+/* Positioning for left and right */
+.timeline-event.left .event-content {
+    float: left;
+    clear: both; /* Ensures no other elements float next to this on the left */
+}
+
+.timeline-event.right .event-content {
+    float: right;
+    clear: both; /* Ensures no other elements float next to this on the right */
+}
+
 /* We'll add more styles as we proceed. */
 
