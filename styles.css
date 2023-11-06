@@ -13,7 +13,7 @@
     
     /* Add other styles for smaller screens */
   }
-    
+
 #animated-name {
     text-align: center;
     font-size: 4rem; /* Large size for the name */
@@ -58,8 +58,9 @@ body {
 }
 
 .container {
-    width: 100%;
+    max-width: 1200px; /* Max width for large screens */
     margin: auto;
+    padding: 0 20px; /* Padding for smaller screens */
     overflow: hidden;
 }
 
@@ -142,6 +143,63 @@ body {
 
 .timeline-event.in-view .event-content {
     animation: fadeInUp 0.5s ease both;
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media Queries */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    /* Adjust styles here */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /* Adjust styles here */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* Adjust styles here */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* Adjust styles here */
+}
+
+.timeline-event .event-content {
+    width: 90%; /* On small screens */
+    margin: 0 auto 20px; /* Center the blocks */
+}
+
+@media (min-width: 768px) {
+    .timeline-event .event-content {
+        width: 45%; /* Two columns on larger screens */
+    }
+}
+
+h1 {
+    font-size: 4vw; /* Viewport relative font sizing */
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Fixed font size on larger screens */
+    }
+}
+
+#animated-name span {
+    transition: transform 0.3s ease;
+}
+
+#animated-name span:hover {
+    transform: scale(1.5); /* Enlarges the letter on hover */
 }
 
 /* We'll add more styles as we proceed. */
