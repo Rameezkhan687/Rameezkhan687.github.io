@@ -1,3 +1,19 @@
+@media only screen and (max-width: 600px) {
+    body {
+      font-size: 14px;
+    }
+    
+    #animated-name {
+      font-size: 2rem; /* Smaller size for mobile */
+    }
+    
+    .container {
+      width: 90%; /* Increase width to use more of the screen on a small device */
+    }
+    
+    /* Add other styles for smaller screens */
+  }
+    
 #animated-name {
     text-align: center;
     font-size: 4rem; /* Large size for the name */
