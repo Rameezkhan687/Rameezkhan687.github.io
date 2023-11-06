@@ -54,7 +54,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    color: #00ff00;
+    color: #0b0a0a;
 }
 
 .container {
@@ -227,51 +227,3 @@ h1 {
 }
 
 /* We'll add more styles as we proceed. */
-
-.timeline:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #333;
-    left: 50%;
-    margin-left: -1px;
-    z-index: 1; /* Make sure the line is below the events */
-}
-
-.timeline-event {
-    position: relative;
-    width: 45%; /* Adjust if necessary */
-    margin-bottom: 20px;
-    z-index: 2; /* Make sure the event is above the timeline */
-}
-
-.timeline-event::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 10px 10px 0 10px; /* Adjust size to match your design */
-    border-color: #333 transparent transparent transparent; /* Adjust color to match your timeline */
-    top: 50%;
-    transform: translateY(-50%); /* Center the branch on the event vertically */
-}
-
-.timeline-event.left::after {
-    left: 100%;
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent #333; /* Arrow pointing left */
-}
-
-.timeline-event.right::after {
-    right: 100%;
-    /* Arrow pointing right (in case you need it) */
-}
-@media (max-width: 768px) {
-    /* Adjust branch orientation/sizes for smaller screens */
-    .timeline-event::after {
-        border-width: 5px 5px 0 5px; /* Smaller branch for smaller screens */
-    }
-}
