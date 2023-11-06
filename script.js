@@ -43,7 +43,18 @@ for (var id in markers) {
         eventElement.scrollIntoView({behavior: "smooth"});
     });
 }
-
 function getKeyByValue(object, value) {
     return Object.keys(object).find(key => object[key] === value);
 }
+window.addEventListener('scroll', () => {
+    // Get the current scroll position
+    let scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Loop through all timeline events
+    timelineEvents.forEach((event) => {
+        // Check if the timeline event is in view
+        if (event.offsetTop < (window.innerHeight + scrollPosition)) {
+            event.classList.add('in-view');
+        }
+    });
+});
