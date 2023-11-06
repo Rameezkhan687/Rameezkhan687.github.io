@@ -58,3 +58,20 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+document.querySelectorAll('.letter').forEach(function(letter) {
+    letter.addEventListener('mouseenter', function() {
+        // Get the image associated with the letter
+        var imageSrc = letter.getAttribute('data-image');
+        
+        // Set the image for preview
+        var preview = document.getElementById('letter-image-preview');
+        preview.innerHTML = '<img src="' + imageSrc + '" alt="Image for ' + letter.textContent + '">';
+        preview.style.display = 'block';
+    });
+
+    letter.addEventListener('mouseleave', function() {
+        // Hide the preview when the mouse leaves the letter
+        var preview = document.getElementById('letter-image-preview');
+        preview.style.display = 'none';
+    });
+});

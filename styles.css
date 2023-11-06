@@ -1,3 +1,38 @@
+#animated-name {
+    text-align: center;
+    font-size: 4rem; /* Large size for the name */
+    font-weight: bold;
+    margin-top: 50px; /* Or however much space you want */
+}
+
+.letter {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s; /* Smooth transition for the zoom effect */
+}
+
+.letter:hover {
+    transform: scale(1.2); /* Increase the size of the letter on hover */
+}
+
+#letter-image-preview {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid white;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Adjust the size of the preview image as needed */
+#letter-image-preview img {
+    max-width: 500px;
+    max-height: 300px;
+    display: block;
+}
+
 body {
     font-family: Century, sans-serif;
     margin: 0;
